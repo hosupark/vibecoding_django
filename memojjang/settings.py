@@ -1,3 +1,9 @@
+# 보안 관련 추가 설정 및 점검
+# - CSRF 보호: Django 기본 적용
+# - XSS 방지: 템플릿 자동 이스케이프
+# - 시크릿 키는 .env에서 관리하며 절대 코드에 노출하지 않음
+# - DEBUG는 운영 환경에서 반드시 False로 설정
+# - ALLOWED_HOSTS는 운영 환경에 맞게 지정
 """
 Django settings for memojjang project.
 
