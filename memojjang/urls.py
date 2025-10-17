@@ -17,10 +17,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+
 from users.views import register_view, login_view, logout_view
+from memos.views import memo_list, memo_detail, memo_create, memo_update, memo_delete
 
 
 urlpatterns = [
+    path('', memo_list, name='home'),
+    path('memos/', memo_list, name='memo_list'),
+    path('memos/<int:pk>/', memo_detail, name='memo_detail'),
+    path('memos/create/', memo_create, name='memo_create'),
+    path('memos/<int:pk>/update/', memo_update, name='memo_update'),
+    path('memos/<int:pk>/delete/', memo_delete, name='memo_delete'),
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),

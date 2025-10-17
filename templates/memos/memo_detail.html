@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ memo.title }}</h2>
+<p>{{ memo.content }}</p>
+<p>작성일: {{ memo.created_at|date:"Y-m-d H:i" }} / 수정일: {{ memo.updated_at|date:"Y-m-d H:i" }}</p>
+<a href="{% url 'memo_update' memo.pk %}" class="btn btn-primary">수정</a>
+<a href="{% url 'memo_delete' memo.pk %}" class="btn btn-danger">삭제</a>
+<a href="{% url 'memo_list' %}" class="btn btn-secondary">목록</a>
+{% endblock %}

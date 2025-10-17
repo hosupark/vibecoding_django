@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>메모 삭제 확인</h2>
+<p>정말로 "{{ memo.title }}" 메모를 삭제하시겠습니까?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">삭제</button>
+    <a href="{% url 'memo_detail' memo.pk %}" class="btn btn-secondary">취소</a>
+</form>
+{% endblock %}
